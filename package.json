@@ -8,10 +8,16 @@
     "cleandep": "npm run rmdir node_modules",
     "lint": "eslint .",
     "rmdir": "node -e \"var fs = require('fs'); try{process.argv.slice(1).map((fpath) => fs.rmdirSync(fpath, { recursive: true }))}catch(err){console.log(err)}; process.exit(0);\"",
-    "build": "tsc -b -v --listFiles"
+    "build": "tsc -b -v --listFiles",
+    "start": "node dist/src/main.js",
+    "dev": "npm run build && npm run start"
   },
   "author": "",
   "license": "Unlicense",
+  "dependencies": {
+    "commander": "^13.1.0",
+    "playwright": "^1.52.0"
+  },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
     "@types/node": "^22.12.0",
